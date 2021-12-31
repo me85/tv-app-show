@@ -18,7 +18,16 @@ class ListCard extends React.Component {
   render() {
     // const { description, urls } = this.props.image;
 
-    return <div>{this.props.show}</div>;
+    return (
+      <div class="ui relaxed divided list">
+        <div class="item">
+          <div class="content">
+            <a class="header"> {this.props.show} </a>
+            <div class="description"> {this.props.showGenres}</div>
+          </div>
+        </div>
+      </div>
+    );
   }
 }
 
