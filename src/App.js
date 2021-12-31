@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import SearchBar from "./SearchBar";
+import tvmaze from "./api/tvmaze";
+import ShowList from "./ShowList";
+import "./App.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  state = { showes: [] };
+
+  onSearchSubmit = async (term) => {
+    console.log("hi");
+    const response = await tvmaze.get("/search/shows", {
+      params: { q: term },
+    });
+    // console.log(response);
+    this.setState({ showes: response.data });
+  };
+
+  // https://api.tvmaze.com/search/shows?q=girls
+
+  render() {
+    console.log(this.state.showes);
+    return (
+      <div className="App">
+        <SearchBar onSubmit={this.onSearchSubmit} />
+        <ShowList showes={this.state.showes} />
+      </div>
+    );
+  }
 }
 
 export default App;
