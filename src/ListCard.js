@@ -23,12 +23,7 @@ class ListCard extends React.Component {
       <div class="ui relaxed divided list">
         <div class="item">
           <div class="content">
-            <a class="header">
-              {this.props.show}
-              <Link to="/MovieInfo">
-                <i class="linkify icon"></i>
-              </Link>
-            </a>
+            <a class="header">{this.props.show}</a>
             <div class="description"> {this.props.showGenres}</div>
           </div>
         </div>
@@ -38,3 +33,7 @@ class ListCard extends React.Component {
 }
 
 export default ListCard;
+
+// <Link to={`/movies/${show.show.id}`}>
+//           <Movie key={show.show.id} movie={show} />
+//           </Link>

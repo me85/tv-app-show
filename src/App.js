@@ -11,7 +11,7 @@ class App extends React.Component {
   state = { showes: [] };
 
   onSearchSubmit = async (term) => {
-    console.log("hi");
+    // console.log("hi");
     const response = await tvmaze.get("/search/shows", {
       params: { q: term },
     });
@@ -33,8 +33,9 @@ class App extends React.Component {
               </>
             }
           />
+          <Route path="/movies/:id" element={<MovieInfo />} />
+
           <Route path="about" element={<About />} />
-          <Route path="movieInfo" element={<MovieInfo data={this.state} />} />
         </Routes>
       </div>
     );
