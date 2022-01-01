@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 class SearchBar extends React.Component {
   state = { term: "" };
@@ -13,30 +14,29 @@ class SearchBar extends React.Component {
     console.log(this.state.term);
 
     return (
-      // <div className="ui segment">
-      //   <div className="ui massive icon input">
-      //     <input
-      //       type="text"
-      //       value={this.state.term}
-      //       onChange={(e) => this.setState({ term: e.target.value })}
-      //       placeholder="Search for TV Show..."
-      //     />
-      //     <i className="search icon"></i>
-      //   </div>
-      // </div>
-      <div className="ui segment">
-        <form onSubmit={this.onFormSubmit} className="ui form">
-          <div className="field">
-            <label>TV Search</label>
-            <input
-              type="text"
-              value={this.state.term}
-              onChange={(e) => this.setState({ term: e.target.value })}
-              placeholder="Search for TV Show..."
-            />
+      <>
+        <div>
+          <Link to="/about">
+            <i class="film icon"></i>
+            Watchlist
+          </Link>
+        </div>
+        <div>
+          <div className="ui segment">
+            <form onSubmit={this.onFormSubmit} className="ui form">
+              <div className="field">
+                <label>TV Search</label>
+                <input
+                  type="text"
+                  value={this.state.term}
+                  onChange={(e) => this.setState({ term: e.target.value })}
+                  placeholder="Search for TV Show..."
+                />
+              </div>
+            </form>
           </div>
-        </form>
-      </div>
+        </div>
+      </>
     );
   }
 }

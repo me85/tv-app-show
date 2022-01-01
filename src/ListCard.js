@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 class ListCard extends React.Component {
   constructor(props) {
@@ -22,7 +23,12 @@ class ListCard extends React.Component {
       <div class="ui relaxed divided list">
         <div class="item">
           <div class="content">
-            <a class="header"> {this.props.show} </a>
+            <a class="header">
+              {this.props.show}
+              <Link to="/MovieInfo">
+                <i class="linkify icon"></i>
+              </Link>
+            </a>
             <div class="description"> {this.props.showGenres}</div>
           </div>
         </div>
