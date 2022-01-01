@@ -9,7 +9,8 @@ class MovieInfo extends React.Component {
     this.state = {
       isLoading: false,
       data: [],
-      // index: this.props.show,
+      id: this.props.id,
+      // index: this.props.imdb,
     };
   }
 
@@ -17,8 +18,8 @@ class MovieInfo extends React.Component {
     this.setState({ isLoading: true });
     // https://api.tvmaze.com/lookup/shows?tvrage=24493
     // https://api.tvmaze.com/lookup/shows?tvrage=${this.state.index}
-    // console.log("imbd", this.props);
-    fetch(`https://api.tvmaze.com/lookup/shows?imdb=tt0944947`)
+    console.log("imbd", this.props.id);
+    fetch(` https://api.tvmaze.com/shows/${this.state.id}`)
       .then((response) => response.json())
       .then((response) => {
         this.setState({
