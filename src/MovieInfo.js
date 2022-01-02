@@ -5,6 +5,7 @@ import Movie from "./Movie";
 
 function MovieInfo(props) {
   const params = useParams();
+
   const [data, setData] = useState();
   console.log(params.id);
 

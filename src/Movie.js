@@ -5,10 +5,10 @@ function Movie(props) {
   return (
     <div>
       <p>Name: {name}</p>
+      <div>
+        <span dangerouslySetInnerHTML={{ __html: summary }}></span>
+      </div>
       <p>rating: {rating.average}</p>
-
-      <p>summary: {summary}</p>
-
       <p>language: {language}</p>
       <p>status: {status}</p>
       <p>premiered: {premiered}</p>
