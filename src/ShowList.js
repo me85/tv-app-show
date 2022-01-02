@@ -8,13 +8,7 @@ const ShowList = (props) => {
   const showes = props.showes.map((show) => {
     return (
       <Link to={`/movies/${show.show.id}`}>
-        <ListCard
-          key={show.show.id}
-          show={show.show.name}
-          showGenres={show.show.genres[0]}
-          // imdb={show.show.externals.imdb}
-          showObj={show}
-        />
+        <ListCard key={show.show.id} show={show.show.name} showGenres={show.show.genres[0]} />
       </Link>
     );
   });
