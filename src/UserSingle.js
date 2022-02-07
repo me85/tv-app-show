@@ -3,7 +3,7 @@ import React from "react";
 const UserSingle = (props) => {
   return (
     <div className="row">
-      <div className="col s2">
+      <div className="col s3">
         <div className="card">
           <div className="card-image">
             <img src="avatar-15.png" alt="Soccer image" />

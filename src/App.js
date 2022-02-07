@@ -77,15 +77,17 @@ class App extends React.Component {
             element={
               <>
                 <MangageUsers />
-                <div className="col s3">
-                  <UserList
-                    players={this.state.players}
-                    updateCurrentPlayer={this.updateCurrentPlayer}
-                  />
-                </div>
+                <div className="row">
+                  <div className="col s3">
+                    <UserList
+                      players={this.state.players}
+                      updateCurrentPlayer={this.updateCurrentPlayer}
+                    />
+                  </div>
 
-                <div>
-                  <UserSingle player={this.state.currentPlayer} />
+                  <div className="col s9">
+                    <UserSingle player={this.state.currentPlayer} />
+                  </div>
                 </div>
               </>
             }

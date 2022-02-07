@@ -9,8 +9,8 @@ function MangageUsers() {
       </nav>
       <br></br>
       <main>
-        <h2>Users</h2>
-        <button>All Users</button>
+        <h2>Users Management </h2>
+        <h5>Visible only to the Admins</h5>
         <button>Add User</button>
       </main>
     </>

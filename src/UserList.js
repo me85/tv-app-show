@@ -5,7 +5,7 @@ const UserList = (props) => {
     <div>
       <ul className="collection with-header">
         <li className="collection-header">
-          <h4> All Users</h4>
+          <h4>Subscriptions</h4>
         </li>
         {props.players.map((item) => (
           <a
