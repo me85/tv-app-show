@@ -18,9 +18,11 @@ class SearchBar extends React.Component {
         <div>
           <Link to="/about">
             <i class="film icon"></i>
-            Watchlist
+            Manage Users
           </Link>
         </div>
+        <br></br>
+        <br></br>
         <div>
           <div className="ui segment">
             <form onSubmit={this.onFormSubmit} className="ui form">
@@ -35,6 +37,7 @@ class SearchBar extends React.Component {
               </div>
             </form>
           </div>
+          <br />
         </div>
       </>
     );
