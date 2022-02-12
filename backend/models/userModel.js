@@ -20,7 +20,7 @@ export const UserSchema = new Schema({
 
   ability: {
     type: String,
-    enum: ["Basic", "gold", "platinum"],
+    enum: ["Basic", "Gold", "Platinum"],
   },
   premissions: {
     updateMovies: { type: Boolean, required: false, default: false },

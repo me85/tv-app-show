@@ -1,4 +1,10 @@
-import { addNewUser, getUsers, UpdateUser, deleteUser } from "../controllers/userControllers";
+import {
+  addNewUser,
+  getUsers,
+  UpdateUser,
+  getUserWithID,
+  deleteUser,
+} from "../controllers/userControllers";
 
 const routes = (app) => {
   app
@@ -13,6 +19,9 @@ const routes = (app) => {
   app
     .route("/user/:UserId")
 
+    // get a specific player
+
+    .get(getUserWithID)
     // update a specific player
     .put(UpdateUser)
 

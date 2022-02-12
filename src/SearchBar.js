@@ -15,17 +15,24 @@ class SearchBar extends React.Component {
 
     return (
       <>
-        <div>
-          <Link to="/about">
-            <i class="film icon"></i>
-            Manage Users
-          </Link>
-        </div>
-        <br></br>
+        <nav>
+          <div class="nav-wrapper">
+            <a href="#!" class="brand-logo center">
+              MOVIES DB
+            </a>
+            <ul class="right hide-on-med-and-down">
+              <li>
+                <a class="waves-effect waves-light btn">
+                  <Link to="/UsersManagement">Manage Users</Link>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
         <br></br>
         <div>
           <div className="ui segment">
-            <form onSubmit={this.onFormSubmit} className="ui form">
+            <form onSubmit={this.onFormSubmit} className="ui form light">
               <div className="field">
                 <label>TV Search</label>
                 <input

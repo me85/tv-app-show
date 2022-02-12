@@ -4,7 +4,8 @@ import tvmaze from "./api/tvmaze";
 import ShowList from "./ShowList";
 import UserList from "./UserList";
 import UserSingle from "./UserSingle";
-
+import UserForm from "./UserForm";
+import UserEdit from "./UserEdit";
 import MangageUsers from "./MangageUsers";
 import MovieInfo from "./MovieInfo";
 import "./App.css";
@@ -23,6 +24,7 @@ class App extends React.Component {
     };
 
     this.updateCurrentPlayer = this.updateCurrentPlayer.bind(this);
+    this.deleteUser = this.deleteUser.bind(this);
   }
 
   componentDidMount() {
@@ -46,6 +48,34 @@ class App extends React.Component {
     });
     // console.log(item);
   }
+
+  deleteUser() {
+    // console.log(this.state.currentPlayer._id);
+    let id = this.state.currentPlayer._id;
+    const url = `http://localhost:4000/user/${id}`;
+    axios
+      .delete(url)
+      .then((Response) => {
+        console.log(Response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
+  // editUser() {
+  //   // console.log(this.state.currentPlayer._id);
+  //   let id = this.state.currentPlayer._id;
+  //   const url = `http://localhost:4000/user/${id}`;
+  //   axios
+  //     .get(url)
+  //     .then((Response) => {
+  //       console.log(Response.data);
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  // }
 
   onSearchSubmit = async (term) => {
     // console.log("hi");
@@ -73,7 +103,7 @@ class App extends React.Component {
           <Route path="/movies/:id" element={<MovieInfo />} />
 
           <Route
-            path="about"
+            path="/UsersManagement"
             element={
               <>
                 <MangageUsers />
@@ -86,12 +116,14 @@ class App extends React.Component {
                   </div>
 
                   <div className="col s9">
-                    <UserSingle player={this.state.currentPlayer} />
+                    <UserSingle player={this.state.currentPlayer} deleteUser={this.deleteUser} />
                   </div>
                 </div>
               </>
             }
           />
+          <Route path="/users" element={<UserForm />} />
+          <Route path="/users/edituser" element={<UserEdit player={this.state.currentPlayer} />} />
         </Routes>
       </div>
     );

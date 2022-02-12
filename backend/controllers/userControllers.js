@@ -32,6 +32,15 @@ export const UpdateUser = (req, res) => {
   });
 };
 
+export const getUserWithID = (req, res) => {
+  User.findById(req.params.UserId, (err, User) => {
+    if (err) {
+      res.send(err);
+    }
+    res.json(Player);
+  });
+};
+
 export const deleteUser = (req, res) => {
   // User.remove?
   User.findOneAndDelete({ _id: req.params.UserId }, (err) => {
